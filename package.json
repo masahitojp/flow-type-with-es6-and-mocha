@@ -1,0 +1,25 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "flow": "flow",
+    "build": "flow-remove-types src/ --out-dir dest/ --ignore src/flow/",
+    "test": "npm run build && mocha --require intelli-espower-loader --recursive ./test/",
+    "flow-test": "npm run flow-node mocha --require intelli-espower-loader --recursive ./test/",
+    "clean": "rm -rf dest"
+  },
+  "author": "Masato Nakamura",
+  "license": "MIT",
+  "dependencies": {
+    "flow-remove-types": "^1.0.5",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.31.1"
+  },
+  "devDependencies": {
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^3.1.0",
+    "power-assert": "^1.4.1"
+  }
+}
